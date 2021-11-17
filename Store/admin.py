@@ -1,6 +1,9 @@
 from django.contrib import admin
-from Store.models import product,Variation
+from Store.models import product,Variation,ReviewRating
 # Register your models here.
+
+
+
 class productAdmin(admin.ModelAdmin):
     prepopulated_fields  = {'slug':('product_name',)}
     list_display=['product_name','price','stock','category','modified_date','is_avilable']
@@ -15,3 +18,8 @@ class VariationAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Variation,VariationAdmin)
+
+
+
+
+admin.site.register(ReviewRating)
